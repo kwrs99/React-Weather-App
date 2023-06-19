@@ -35,6 +35,7 @@ p {
 }
 body {
   height: 100vh;
+  background: linear-gradient(to top, #f9dccf 0%, #89d8fc 100%);
 }
 
 a {
@@ -73,6 +74,8 @@ img {
   margin-top: 60px;
   background-color: rgba(209, 202, 202, 0.25);
   box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.404);
+  border: 5vw;
+  border-color: black;
   border-radius: 20px;
   width: 80%;
   background: linear-gradient(to top, #f9dccf 0%, #89d8fc 100%);
@@ -93,11 +96,11 @@ img {
   width: 10%;
 }
 .col {
-  padding-top: 20px;
+  padding-top: 90px;
 }
 
 .col-6 {
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .search {
@@ -197,4 +200,8 @@ img {
   text-transform: capitalize;
   text-align: center;
   font-family: exo;
+}
+
+#city-name {
+  margin-top: 50px;
 }
