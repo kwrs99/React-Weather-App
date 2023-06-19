@@ -18,12 +18,12 @@ export default function Current(props) {
             <h2>
               <em id="current-temp">23 </em>
               <span>
-                <a href="#" class="active" id="celsius">
+                <a href="/" class="active" id="celsius">
                   {" "}
                   °C
                 </a>
-                <a> | </a>
-                <a href="#" id="fahrenheit">
+                |
+                <a href="/" id="fahrenheit">
                   °F
                 </a>
               </span>
