@@ -1,36 +1,30 @@
 import React from "react";
+import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 import "./App.css";
+
 import sunIcon from "./images/sun.png";
 
 export default function Current(props) {
+  let wind = Math.round(props.data.wind);
   return (
     <div class="row">
       <div class="col-6">
-        <h1 id="city-name">Gaborone</h1>
-        <h3 id="date-time">15th May 2023</h3>
-        <img id="icon" src={sunIcon} alt="sun" />
+        <h1 id="city-name">{props.data.city}</h1>
 
-        <h1 id="high-low">23 | 18°C</h1>
+        <FormattedDate id="date-time" date={props.data.date} />
+        <img id="icon" src={props.data.icon} />
+        <h3 id="description">{props.data.description}</h3>
       </div>
       <div class="col">
         <ul>
           <li>
             <h2>
-              <em id="current-temp">23 </em>
-              <span>
-                <a href="/" class="active" id="celsius">
-                  {" "}
-                  °C
-                </a>
-                |
-                <a href="/" id="fahrenheit">
-                  °F
-                </a>
-              </span>
+              <WeatherTemperature celcius={props.data.temperature} />
             </h2>
           </li>
           <li>
-            <h3 id="description">Scattered Clouds</h3>
+            <h3 id="high-low">Hi: 23 | Lo: 18°C</h3>
           </li>
         </ul>
       </div>
@@ -42,13 +36,13 @@ export default function Current(props) {
             <br />
             <li>
               <h3>
-                Humidity: <span id="humidity">35</span>%
+                Humidity: <span id="humidity">{props.data.humidity}</span>%
               </h3>
             </li>
 
             <li>
               <h3>
-                Wind: <span id="wind">2</span> km/h
+                Wind: <span id="wind">{wind}</span> km/h
               </h3>
             </li>
           </ul>
