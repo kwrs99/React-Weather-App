@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
-import WeatherTemperature from "./WeatherTemperature";
+
 import sunIcon from "./images/sun.png";
 import rainIcon from "./images/rain-clouds.png";
 
