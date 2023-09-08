@@ -12,7 +12,7 @@ button {
   font-family: "Exo";
 }
 h1 {
-  font-size: 45px;
+  font-size: 50px;
 }
 h2 {
   font-size: 50px;
@@ -23,6 +23,7 @@ h3 {
   font-weight: 100;
   font-size: 22px;
   margin-bottom: 10px;
+  text-transform: capitalize;
 }
 
 ul {
@@ -35,7 +36,7 @@ p {
 }
 body {
   height: 100vh;
-  background: linear-gradient(to top, #f9dccf 0%, #5ec6f6 100%);
+  background: linear-gradient(to top, #f9dccf 10%, #5ec6f6e4 100%);
 }
 
 a {
@@ -66,20 +67,27 @@ footer {
   text-align: center;
   margin: 0 auto;
   padding: 10;
-  padding-top: 16px;
+  padding-top: 20px;
+  background-color: rgba(128, 128, 128, 0.08);
+  border-radius: 10px;
 }
 
 img {
   display: block;
   margin: 0 auto;
   width: 100px;
+  padding-top: 10px;
+}
+
+.row {
+  padding: 20px;
 }
 
 .container {
   padding: 30px;
   padding-right: calc(var(--bs-gutter-x) * 0.9);
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 10px;
   background-color: rgba(209, 202, 202, 0.25);
   box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.404);
   border: 5vw;
@@ -95,7 +103,7 @@ img {
   display: inline;
   text-decoration: none;
   font-size: 16px;
-  border-radius: 40px;
+  border-radius: 10px;
   margin: 10px auto;
   margin-left: 20px;
   border: 1px solid rgba(100, 148, 237, 0.6);
@@ -103,20 +111,13 @@ img {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   width: 10%;
 }
-.col {
-  padding-top: 90px;
-}
-
-.col-6 {
-  margin-top: 60px;
-}
 
 .search {
   display: inline;
   width: 70%;
-  margin-left: 100px;
+  margin-left: 75px;
   height: 45px;
-  border-radius: 20px;
+  border-radius: 10px;
   border-width: 2px;
   border: solid rgba(100, 148, 237, 0.6);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -124,40 +125,28 @@ img {
 }
 #search-button:hover {
   cursor: pointer;
-  color: rgba(100, 148, 237, 0.6);
-  background-color: white;
-  border: 1px solid rgba(100, 148, 237, 0.6);
+  color: white;
+  background-color: rgba(100, 148, 237, 0.3);
+  border: 1px solid rgba(100, 148, 237, 0.4);
   font-size: 16px;
-  transition: ms;
+  transition: 200ms;
 }
 
-.temp {
+#temp {
   padding-top: 5px;
   line-height: 1.5;
+  font-size: 40px;
 }
-.vertical {
-  border-left: thin solid rgba(0, 0, 0, 0.3);
-  padding-top: 0;
-  margin-top: 100px;
-  padding-bottom: 30px;
-}
-#date-time {
+
+h6 {
   text-align: center;
   font-family: exo;
   line-height: 1.5;
   font-weight: 100;
-  font-size: 20px;
-  padding: 10px;
-  margin: 3px;
+  font-size: 10px;
+  padding: 3px;
+  margin: 1px;
   padding-bottom: 0;
-}
-
-#high-low {
-  font-size: 23px;
-  padding-top: 10px;
-  line-height: 1.2;
-  margin-bottom: 0.7rem;
-  font-weight: 200;
 }
 
 #current-location {
@@ -174,12 +163,13 @@ img {
 
 #description {
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 #city-name {
   margin-bottom: 0;
   margin-top: 0px;
+  font-size: 50px;
 }
 #hi-lo {
   margin-bottom: 0;
@@ -200,7 +190,7 @@ img {
   text-transform: capitalize;
   text-align: center;
   font-family: exo;
-  color: rgba(128, 128, 128, 0.9);
+  color: rgb(70, 69, 69);
 }
 
 .forecast-temp-hi,
@@ -210,6 +200,15 @@ img {
   font-family: exo;
 }
 
-#city-name {
-  margin-top: 50px;
+h4 {
+  font-size: 35px;
+}
+
+#humidity {
+  padding-top: 55px;
+}
+
+.App {
+  max-width: 1000px;
+  margin: 100px auto;
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Current from "./Current";
 import Forecast from "./Forecast";
+import "./App.css";
 
 import axios from "axios";
 

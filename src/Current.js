@@ -8,44 +8,41 @@ export default function Current(props) {
 
   return (
     <div class="row">
-      <div class="col-6">
+      <div class="col-4 mt-5">
         <h1 id="city-name">{props.data.city}</h1>
 
-        <FormattedDate id="date-time" date={props.data.date} />
-        <img id="icon" alt="icon" src={props.data.icon} />
-        <h3 id="description">{props.data.description}</h3>
-      </div>
-      <div class="col">
+        <h6 id="date-time ">
+          <FormattedDate date={props.data.date} />
+        </h6>
         <ul>
           <li>
-            <h2>
+            <h2 id="temp">
               <WeatherTemperature celcius={props.data.temperature} />
             </h2>
           </li>
-          <li>
-            <h3 id="high-low">Hi: | Lo: 18 {props.data.min}°</h3>
-          </li>
         </ul>
       </div>
+      <div class="col-4 mt-5">
+        <img id="icon-main" alt="icon" src={props.data.icon} />
+        <h3>{props.data.description}</h3>
+      </div>
 
-      <div class="col temp">
-        <div class="col vertical">
-          <ul>
-            <br />
-            <br />
-            <li>
-              <h3>
-                Humidity: <span id="humidity">{props.data.humidity}</span>%
-              </h3>
-            </li>
+      <div className="col-4 mt-5">
+        {" "}
+        <h1 id="city-name"></h1>
+        <ul>
+          <li>
+            <h4 id="humidity">
+              Humidity: <span>{props.data.humidity}</span>%
+            </h4>
+          </li>
 
-            <li>
-              <h3>
-                Wind: <span id="wind">{wind}</span> km/h
-              </h3>
-            </li>
-          </ul>
-        </div>
+          <li>
+            <h4>
+              Wind: <span id="wind">{wind}</span> km/h
+            </h4>
+          </li>
+        </ul>
       </div>
     </div>
   );
