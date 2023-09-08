@@ -5,6 +5,7 @@ import "./App.css";
 
 export default function Current(props) {
   let wind = Math.round(props.data.wind);
+
   return (
     <div class="row">
       <div class="col-6">
@@ -22,7 +23,7 @@ export default function Current(props) {
             </h2>
           </li>
           <li>
-            <h3 id="high-low">Hi: 23 | Lo: 18°C</h3>
+            <h3 id="high-low">Hi: | Lo: 18 {props.data.min}°</h3>
           </li>
         </ul>
       </div>

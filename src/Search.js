@@ -47,14 +47,13 @@ export default function Search(props) {
             type="search"
             placeholder="Enter a city..."
             onChange={updateCity}
-            class="search"
+            className="search"
             id="search-input"
-            autocomplete="off"
+            autoComplete="off"
           />
           <button type="submit" value="Search" id="search-button">
             Submit
           </button>
-          <button id="current-location">📍</button>
         </form>
 
         <Current data={weatherData} />

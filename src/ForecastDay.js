@@ -35,12 +35,7 @@ export default function ForecstDay(props) {
   return (
     <div>
       <h4>{day()}</h4>
-      <img
-        src={props.data.weather[0].icon}
-        alt="rain clouds"
-        class="rain"
-        width="100px"
-      />
+      <img src={props.data.weather[0].icon} alt="rain clouds" width="100px" />
       <p>
         {maxTemp()}|{minTemp()}
       </p>
