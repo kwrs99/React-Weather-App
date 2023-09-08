@@ -35,7 +35,11 @@ export default function ForecstDay(props) {
   return (
     <div>
       <h4>{day()}</h4>
-      <img src={props.data.weather[0].icon} alt="icon" width="100px" />
+      <img
+        src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
+        alt="icon"
+        width="100px"
+      />
       <p>
         {maxTemp()}|{minTemp()}
       </p>
