@@ -19,11 +19,11 @@ export default function Forecast(props) {
   if (loaded) {
     console.log(forecast);
     return (
-      <div class="row">
+      <div className="row">
         {forecast.map(function (dailyForecast, index) {
           if (index < 5) {
             return (
-              <div class="col-md-2" key={index}>
+              <div className="col-md-2" key={index}>
                 <ForecastDay data={dailyForecast} />
               </div>
             );

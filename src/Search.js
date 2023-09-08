@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Current from "./Current";
 import Forecast from "./Forecast";
-import "./App.css";
 
 import axios from "axios";
 
@@ -15,7 +14,6 @@ export default function Search(props) {
       coordinates: response.data.coord,
       city: response.data.name,
       temperature: response.data.main.temp,
-
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,

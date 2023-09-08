@@ -7,8 +7,8 @@ export default function Current(props) {
   let wind = Math.round(props.data.wind);
 
   return (
-    <div class="row">
-      <div class="col-4 mt-5">
+    <div className="row">
+      <div className="col-4 mt-5">
         <h1 id="city-name">{props.data.city}</h1>
 
         <h6 id="date-time ">
@@ -22,7 +22,7 @@ export default function Current(props) {
           </li>
         </ul>
       </div>
-      <div class="col-4 mt-5">
+      <div className="col-4 mt-5">
         <img id="icon-main" alt="icon" src={props.data.icon} />
         <h3>{props.data.description}</h3>
       </div>
