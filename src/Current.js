@@ -3,8 +3,6 @@ import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature";
 import "./App.css";
 
-import sunIcon from "./images/sun.png";
-
 export default function Current(props) {
   let wind = Math.round(props.data.wind);
   return (
@@ -13,7 +11,7 @@ export default function Current(props) {
         <h1 id="city-name">{props.data.city}</h1>
 
         <FormattedDate id="date-time" date={props.data.date} />
-        <img id="icon" src={props.data.icon} />
+        <img id="icon" alt="icon" src={props.data.icon} />
         <h3 id="description">{props.data.description}</h3>
       </div>
       <div class="col">

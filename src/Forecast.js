@@ -1,53 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
-
-import sunIcon from "./images/sun.png";
-import rainIcon from "./images/rain-clouds.png";
+import ForecastDay from "./ForecastDay";
 
 export default function Forecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecast, setForecast] = useState(null);
+
   function handleResponse(response) {
-    console.log(response.data);
+    setForecast(response.data.daily);
+    setLoaded(true);
   }
 
-  const apiKey = "b400ae3b711a616262d18b0ca2cbe78f";
-  const longitude = props.coordinates.lon;
-  const latitude = props.coordinates.lat;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  if (loaded) {
+    console.log(forecast);
+    return (
+      <div class="row">
+        {forecast.map(function (dailyForecast, index) {
+          if (index < 6 && index > 0) {
+            return (
+              <div class="col-md-2" key={index}>
+                <ForecastDay data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
+  } else {
+    const apiKey = "b400ae3b711a616262d18b0ca2cbe78f";
+    const longitude = props.coordinates.lon;
+    const latitude = props.coordinates.lat;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
 
-  axios.get(apiUrl).then(handleResponse);
-  return (
-    <div class="row">
-      <div class="col-md-2">
-        <h4>Tomorrow</h4>
-        <img src={rainIcon} alt="rain clouds" class="rain" width="100px" />
-        <p>29°C | 19°C</p>
-        <p>Heavy Rain</p>
-      </div>
-      <div class="col-md-2">
-        <h4>Thursday</h4>
-        <img src={rainIcon} alt="rain clouds" class="rain" width="100px" />
-        <p>28°C | 18°C</p>
-        <p>Light rain</p>
-      </div>
-      <div class="col-md-2">
-        <h4>Friday</h4>
-        <img src={rainIcon} alt="rain clouds" class="rain" width="100px" />
-        <p>28°C | 18°C</p>
-        <p>Rain</p>
-      </div>
-      <div class="col-md-2">
-        <h4>Saturday</h4>
-        <img src={rainIcon} alt="rain clouds" class="rain" width="100px" />
-        <p>26°C | 17°C</p>
-        <p>Light rain</p>
-      </div>
-      <div class="col-md-2">
-        <h4>Sunday</h4>
-        <img src={sunIcon} alt="sun" class="sun" width="100px" />
-        <p>28°C | 18°C</p>
-        <p>Sunny</p>
-      </div>
-    </div>
-  );
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+  }
 }
