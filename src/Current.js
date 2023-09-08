@@ -29,7 +29,6 @@ export default function Current(props) {
 
       <div className="col-4 mt-5">
         {" "}
-        <h1 id="city-name"></h1>
         <ul>
           <li>
             <h4 id="humidity">
